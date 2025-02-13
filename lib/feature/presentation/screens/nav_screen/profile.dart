@@ -71,7 +71,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Column(
                       children: List.generate(
                         5,
-                        (index) {
+                        (index) {//jf
                           return ListTile(
                             contentPadding: EdgeInsets.only(
                                 top: DimensionHelper.dimens_20.h,left: DimensionHelper.dimens_20),
