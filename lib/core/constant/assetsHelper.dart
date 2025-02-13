@@ -54,6 +54,7 @@ static const String donut = "assets/images/Donut.png";
   static const String youtube = "assets/images/youtube.jpg";
   static const String girl = "assets/images/girl.jpg";
   static const String paypal = "assets/images/paypal.png";
+  static const String card = "assets/images/Cards.png";
   static const List<String> tImages = [
    AssetsHelper.gpay,
    AssetsHelper.ppay,

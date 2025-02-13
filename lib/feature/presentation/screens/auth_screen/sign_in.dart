@@ -16,7 +16,7 @@ import '../../widgets/custom_text_field.dart';
 import '../../widgets/cutom_button.dart';
 
 class SignInScreen extends StatefulWidget {
-  SignInScreen({super.key});
+  const SignInScreen({super.key});
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();

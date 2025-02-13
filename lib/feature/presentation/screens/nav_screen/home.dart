@@ -6,7 +6,6 @@ import 'package:income_expance_tracker_app/core/constant/dimensionHelper.dart';
 import 'package:income_expance_tracker_app/core/constant/stringHelper.dart';
 import 'package:income_expance_tracker_app/feature/presentation/widgets/custom_app_bar.dart';
 import 'package:income_expance_tracker_app/feature/presentation/widgets/custom_debit_card.dart';
-import 'package:income_expance_tracker_app/feature/presentation/widgets/custom_text.dart';
 
 import '../../widgets/custom_background_painter.dart';
 import '../../widgets/custom_row_text_space_between.dart';
@@ -109,20 +108,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-//custom background
-// Card(
-// child: ListTile(
-// leading: Container(
-// height: 20,
-// width: 20,
-// decoration: BoxDecoration(
-// image: DecorationImage(
-// fit: BoxFit.cover,
-// image: AssetImage(AssetsHelper.tImages[index]))
-// ),
-// ),
-// title: CustomText(alignment: Alignment.centerLeft, title: StringHelper.tName[index], style: Theme.of(context).textTheme.headlineMedium),
-// subtitle: CustomText(alignment: Alignment.centerLeft, title: StringHelper.tDates[index], style: Theme.of(context).textTheme.headlineSmall),
-// trailing: CustomText(alignment: Alignment.centerLeft, title: "\$ ${2065}.00", style: Theme.of(context).textTheme.labelMedium),
-// ),
-// );

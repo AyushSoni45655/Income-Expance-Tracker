@@ -4,7 +4,6 @@ import 'package:income_expance_tracker_app/core/constant/colorsHelper.dart';
 import 'package:income_expance_tracker_app/core/constant/fontsHelper.dart';
 import 'package:income_expance_tracker_app/core/constant/helper_funcction.dart';
 import 'package:income_expance_tracker_app/core/constant/stringHelper.dart';
-import 'package:income_expance_tracker_app/feature/presentation/widgets/custom_text.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

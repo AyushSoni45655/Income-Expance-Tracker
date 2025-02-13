@@ -1,10 +1,10 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:income_expance_tracker_app/core/constant/dimensionHelper.dart';
 import 'package:income_expance_tracker_app/core/constant/fontsHelper.dart';
 
 class ExpensedChart extends StatelessWidget {
+  const ExpensedChart({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

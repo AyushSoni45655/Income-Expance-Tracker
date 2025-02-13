@@ -115,6 +115,8 @@ static const String tHistory = "Transaction History";
   static const String feb19 = "Feb 19 2019";
   static const String sAgain = "Send Again";
   static const String tSpending = "Top Spending";
+  static const String adCard = "Add Your Debit Card";
+  static const String adCardT = "This card must be connected to a bank\n account under your name";
   static const List<String> tName = [
     StringHelper.gpay,
     StringHelper.ppay,

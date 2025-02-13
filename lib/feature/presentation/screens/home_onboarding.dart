@@ -6,7 +6,6 @@ import 'package:income_expance_tracker_app/core/constant/colorsHelper.dart';
 import 'package:income_expance_tracker_app/core/constant/dimensionHelper.dart';
 import 'package:income_expance_tracker_app/core/constant/fontsHelper.dart';
 import 'package:income_expance_tracker_app/core/constant/stringHelper.dart';
-import 'package:income_expance_tracker_app/feature/presentation/widgets/cutom_button.dart';
 
 class HomeOnboarding extends StatefulWidget {
   const HomeOnboarding({super.key});
