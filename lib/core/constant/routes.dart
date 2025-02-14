@@ -1,6 +1,7 @@
 
  import 'package:go_router/go_router.dart';
 import 'package:income_expance_tracker_app/feature/presentation/screens/add_expance_screen.dart';
+import 'package:income_expance_tracker_app/feature/presentation/screens/bill_payment_screen.dart';
 import 'package:income_expance_tracker_app/feature/presentation/screens/bottom_nav_screen.dart';
 import 'package:income_expance_tracker_app/feature/presentation/screens/connect_wallet_screen.dart';
 import 'package:income_expance_tracker_app/feature/presentation/screens/home_onboarding.dart';
@@ -69,5 +70,10 @@ final GoRouter appRoutes = GoRouter(routes: [
     path: "/cWallet",
     name: "connectWallet",
     builder: (context, state) => ConnectWalletScreen(),
+  ),
+  GoRoute(
+    path: "/bPayment",
+    name: "billPayment",
+    builder: (context, state) => BillPaymentScreen(),
   )
  ]);

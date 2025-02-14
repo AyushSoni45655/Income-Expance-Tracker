@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:income_expance_tracker_app/feature/presentation/widgets/custom_connect_wallet_account.dart';
 import 'package:income_expance_tracker_app/feature/presentation/widgets/custom_text.dart';
 import 'package:income_expance_tracker_app/feature/presentation/widgets/custom_text_field.dart';
+import 'package:income_expance_tracker_app/feature/presentation/widgets/cutom_button.dart';
 
 import '../../../core/constant/assetsHelper.dart';
 import '../../../core/constant/colorsHelper.dart';
@@ -21,12 +24,28 @@ class ConnectWalletScreen extends StatefulWidget {
 }
 
 class _ConnectWalletScreenState extends State<ConnectWalletScreen> {
+  List<IconData>leadingIcon = [
+    Icons.food_bank_outlined,
+    Icons.monetization_on_outlined,
+    Icons.paypal
+  ];
+  List<String>title = [
+    StringHelper.bTitle,
+    StringHelper.mTitle,
+    StringHelper.pTitle,
+  ];
+  List<String>subTitle = [
+    StringHelper.bSubTitle,
+    StringHelper.mSubTitle,
+    StringHelper.pSubTitle,
+  ];
   final TextEditingController name = TextEditingController();
   final TextEditingController cvv = TextEditingController();
   final TextEditingController expiry = TextEditingController();
   final TextEditingController zip = TextEditingController();
   final TextEditingController number = TextEditingController();
   int selectIndex = 0;
+  int accountSelected = 0;
   List<String>billsName = [
     "Cards",
     "Accounts"
@@ -156,43 +175,72 @@ class _ConnectWalletScreenState extends State<ConnectWalletScreen> {
                     Expanded(child: Container(
                       child: Column(
                         children: [
-                          SizedBox(
-                            height: 800,
-                            child: ListView.builder(
-                              shrinkWrap: true,
-                              itemCount: StringHelper.tDates.length,
-                              itemBuilder: (context, index) {
-                                return SizedBox(
-                                  height: DimensionHelper.dimens_100,
-                                  child: ListTile(
-                                      leading: Container(
-                                        height: 60,
+                          SizedBox(height: DimensionHelper.dimens_40.h,),
+                          Column(
+                            children: List.generate(leadingIcon.length, (index) => Padding(
+                              padding:  EdgeInsets.only(top: DimensionHelper.dimens_40.h),
+                              child: GestureDetector(
+                                onTap: (){
+                                  setState(() {
+                                    accountSelected = index;
+                                  });
+                                },
+                                child: Container(
+                                  height: MediaQuery.of(context).size.height * .14,
+                                  width: MediaQuery.of(context).size.width * .8.w,
+                                  padding: EdgeInsets.symmetric(horizontal: DimensionHelper.dimens_20.h,vertical: DimensionHelper.dimens_20.h),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(DimensionHelper.dimens_30.r),
+                                    color: Color(0xffECF9F8),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      CircleAvatar(
+                                        radius: DimensionHelper.dimens_60.r,
+                                        backgroundColor: Colors.white,
+                                        child: Icon(leadingIcon[index],size: DimensionHelper.dimens_100,color: ColorsHelper.primaryLight,),
+                                      ),
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(title[index],style: TextStyle(
+                                              color: ColorsHelper.primaryDark,
+                                              fontSize: FontHelper.font_28,
+                                              fontWeight: FontWeight.bold
+                                          ),textAlign: TextAlign.start,),
+                                          Text(subTitle[index]??"",style: TextStyle(
+                                              color: ColorsHelper.primaryDark,
+                                              fontSize: FontHelper.font_20,
+                                              fontWeight: FontWeight.bold
+                                          ),textAlign: TextAlign.start,)
+                                        ],
+                                      ),
+
+                                      accountSelected == index?Container(
+                                        //padding: EdgeInsets.all(DimensionHelper.dimens_8),
+                                        height: 40,
                                         width: 50,
                                         decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(DimensionHelper.dimens_20.r),
-                                            image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                    AssetsHelper.tImages[index]))),
-                                      ),
-                                      title: Text(StringHelper.tName[index],style: Theme.of(context).textTheme.headlineMedium,),
-                                      subtitle: Text(StringHelper.tDates[index],style: Theme.of(context).textTheme.headlineSmall,),
-                                      trailing: Container(height: DimensionHelper.dimens_50.h,width: DimensionHelper.dimens_100.w,
-                                        decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(DimensionHelper.dimens_20.r),
-                                            color: Color(0xffECF9F8)
+                                          color: ColorsHelper.primaryDark,
+                                          borderRadius: BorderRadius.circular(DimensionHelper.dimens_20.r),
                                         ),
-                                        child: Center(child: Text("Pay",style: TextStyle(
-                                            color: ColorsHelper.primaryLight,
-                                            fontSize: FontHelper.font_24,
-                                            fontWeight: FontWeight.bold
-                                        ),),),
-                                      )
+                                        child: Icon(Icons.check,size: DimensionHelper.dimens_30,color: ColorsHelper.whiteColor,),
+                                      ):SizedBox()
+                                    ],
                                   ),
-                                );
-                              },
-                            ),
+
+                                ),
+                              )
+                            ),),
                           ),
+                          SizedBox(height: DimensionHelper.dimens_60.h,),
+                          CustomButton(title: StringHelper.next, callback: (){
+                            context.go("/bPayment");
+                          }, text: "nex")
+
+                          //CustomConnectWalletAccount()
                         ],
                       ),
                     ))

@@ -117,6 +117,27 @@ static const String tHistory = "Transaction History";
   static const String tSpending = "Top Spending";
   static const String adCard = "Add Your Debit Card";
   static const String adCardT = "This card must be connected to a bank\n account under your name";
+                                                                                 // for account income & expance app
+  static const String bTitle = "Bank Link";
+  static const String bSubTitle = "Connect your bank\n account to deposit & fund";
+  static const String mTitle = "MicroDeposits";
+  static const String mSubTitle = "Connect Bank in 5 to 7 days";
+  static const String pTitle = "PayPal";
+  static const String pSubTitle = "Connect You Paypal Account";
+  static const String pSuccess = "Payment Successfully";
+  static const String yPremium = "Youtube Premium";
+
+  static const String tDetails = "Transactions Details";
+  static const String pMethod = "Payment Method";
+  static const String status = "Status";
+  static const String time = "Time";
+  static const String date = "Date";
+  static const String tId = "Transaction ID";
+  static const String price = "Price";
+  static const String fee = "Fee";
+  static const String total = "Total";
+
+
   static const List<String> tName = [
     StringHelper.gpay,
     StringHelper.ppay,
