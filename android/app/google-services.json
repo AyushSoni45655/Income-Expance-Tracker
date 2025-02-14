@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1033636986652",
+    "project_id": "incomeexpancetracker",
+    "storage_bucket": "incomeexpancetracker.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033636986652:android:6b59d542d4808d0922c4d9",
+        "android_client_info": {
+          "package_name": "com.example.income_expance_tracker_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9XKkMdz0Jlh06go0ICtGkEWkCF9jCD7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
